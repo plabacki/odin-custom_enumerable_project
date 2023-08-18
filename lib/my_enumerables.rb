@@ -6,6 +6,15 @@ end
 # on the Array class. Methods defined in
 # your enumerable module will have access
 # to this method
+
 class Array
-  # Define my_each here
+  def my_each
+      for item in self
+        yield(self)
+      end  
+  end  
+end
+
+[1,2,3].my_each do |item|
+  puts item + 10
 end
